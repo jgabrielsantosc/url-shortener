@@ -5,7 +5,7 @@ from flask import request
 
 limiter = Limiter(
     key_func=get_remote_address,
-    default_limits=["5 per minute", "500 per day", "50 per hour"],
+    default_limits=["1000 per minute", "100000 per day", "5000 per hour"],
     storage_uri=MONGO_URI,
     strategy="fixed-window",
 )
